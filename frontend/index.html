@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hackathon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 40px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+    <ul id="lista">
+    </ul>
+
+    <table id="gente">
+    <tr>
+      <th>MAC</th>
+      <th>Nick</th>
+      <th>Avatar</th>
+      <th>Estado</th>
+    </tr> 
+    </table>
+
+    <!--templates-->
+    <script type="text/template" id="tpl-item">
+      <li>
+        <strong>MAC:</strong> <%=mac_address%>, 
+        <strong>Nick:</strong> <%=nickname%>, 
+        <strong>Avatar:</strong> <%=avatar%>, 
+        <strong>Estado:</strong> <%=online%>
+      </li>
+    </script>
+
+    <script type="text/template" id="tpl-tr">
+      <tr>
+        <td><%=mac_address%></td>
+        <td><%=nickname%></td>
+        <td><%=avatar%></td>
+        <td><%=online%></td>
+      </tr>
+    </script>
+
+
+    <!--Javascript-->
+    <script src="./js/jquery-1.8.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/underscore.js"></script>
+    <script src="./js/backbone.js"></script>
+    <script src="./js/socket.js"></script>
+    <script src="./js/backbone.js"></script>
+    <script src="./js/main.js"></script>
+
+
+  </body>
+</html>
