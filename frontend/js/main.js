@@ -17,7 +17,7 @@ Hackathon.Models.User = Backbone.Model.extend({
 
 Hackathon.Collections.Users = Backbone.Collection.extend({
 	model: Hackathon.Models.User,
-	url: 'http://192.168.1.111:4567'
+	url: '/bigbrother/api/personas'
 });
 
 // Views

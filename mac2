@@ -1,0 +1,4 @@
+#!/bin/bash
+pwd
+sudo /home/hackathon/hackathon/mac.sh
+echo 'termino ejecución';
