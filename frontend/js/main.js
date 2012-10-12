@@ -1,6 +1,6 @@
 // Setup
 
-var Hackathon = {
+var BigBrother = {
 	Models: {},
 	Collections: {},
 	Views: {},
@@ -10,30 +10,29 @@ var Hackathon = {
 
 // Models
 
-Hackathon.Models.User = Backbone.Model.extend({	
+BigBrother.Models.User = Backbone.Model.extend({	
 });
 
 // Collections
 
-Hackathon.Collections.Users = Backbone.Collection.extend({
-	model: Hackathon.Models.User,
-	url: '/bigbrother/api/personas'
+BigBrother.Collections.Users = Backbone.Collection.extend({
+	model: BigBrother.Models.User,
+        url: '/bigbrother/api/personas'
 });
 
 // Views
 
-Hackathon.Views.UserList = Backbone.View.extend({
-	el: '#lista',
+BigBrother.Views.UserList = Backbone.View.extend({
+	el: '#gente',
 
 	initialize: function() {
-		this.collection = new Hackathon.Collections.Users();
+		this.collection = new BigBrother.Collections.Users();
 		this.collection.bind('reset',this.render,this);
 		this.collection.bind('add',this.render,this);
 		this.collection.fetch();
 	},
 
 	render: function() {
-		$(this.el).html("");
 		var self = this;
 		self.collection.each(function(model){
 			self.addOne(model);
@@ -41,12 +40,12 @@ Hackathon.Views.UserList = Backbone.View.extend({
 	},
 
 	addOne: function(model) {
-		var view = new Hackathon.Views.UserListItem({model: model});
+		var view = new BigBrother.Views.UserListItem({model: model});
 		$(this.el).append(view.render().el);
 	},
 });
 
-Hackathon.Views.UserListItem = Backbone.View.extend({
+BigBrother.Views.UserListItem = Backbone.View.extend({
 	template: _.template($('#tpl-tr').html()),
 
 	initialize: function(){
@@ -60,18 +59,18 @@ Hackathon.Views.UserListItem = Backbone.View.extend({
 })
 
 // Router
-Hackathon.Router = Backbone.Router.extend({
+BigBrother.Router = Backbone.Router.extend({
 
     routes: {
         "": "initialize"
     },
 
     initialize: function () {
-    	var view = new Hackathon.Views.UserList();
+    	var view = new BigBrother.Views.UserList();
     },
 });
 
 $(function(){
-	var router = new Hackathon.Router();
+	var router = new BigBrother.Router();
 	Backbone.history.start();
 })
