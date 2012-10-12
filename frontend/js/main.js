@@ -17,7 +17,7 @@ BigBrother.Models.User = Backbone.Model.extend({
 
 BigBrother.Collections.Users = Backbone.Collection.extend({
 	model: BigBrother.Models.User,
-	url: 'http://192.168.1.111:4567'
+        url: '/bigbrother/api/personas'
 });
 
 // Views
